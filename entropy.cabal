@@ -16,7 +16,7 @@ homepage:       https://github.com/TomMD/entropy
 bug-reports:    https://github.com/TomMD/entropy/issues
 stability:      stable
 
-build-type:     Custom
+build-type:     Simple
 
 tested-with:
   GHC == 9.12.1
