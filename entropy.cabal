@@ -47,7 +47,7 @@ Flag DoNotGetEntropy
   Manual: True
 
 custom-setup
-  setup-depends: Cabal >= 1.10 && < 3.13
+  setup-depends: Cabal >= 1.10 && < 3.15
                , base < 5
                , filepath < 1.6
                , directory < 1.4
