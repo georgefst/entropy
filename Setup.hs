@@ -106,7 +106,10 @@ checkGetentropy cc lbi = do
   where cArgs = ["-DHAVE_GETENTROPY"]
 
 myRawSystemExitCode :: Verbosity -> FilePath -> [String] -> IO ExitCode
-#if __GLASGOW_HASKELL__ >= 704
+#if MIN_VERSION_Cabal(3,14,0)
+myRawSystemExitCode verbosity program arguments =
+    rawSystemExitCode verbosity Nothing program arguments Nothing
+#elif __GLASGOW_HASKELL__ >= 704
 -- We know for sure, that if GHC >= 7.4 implies Cabal >= 1.14
 myRawSystemExitCode = rawSystemExitCode
 #else
